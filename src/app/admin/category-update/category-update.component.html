@@ -1,0 +1,23 @@
+<form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      Category Name
+      <br>
+      <input type="text" formControlName="category_name">
+    </label>
+  </div>
+  <div *ngIf="categoryForm.get('category_name').invalid && categoryForm.get('category_name').touched" style="color: red">
+    Category name is required and min length is 10
+  </div>
+  <div>
+    <label>
+      Producer
+      <br>
+      <input type="text" formControlName="producer">
+    </label>
+  </div>
+  <div *ngIf="categoryForm.get('producer').invalid && categoryForm.get('producer').touched" style="color: red">
+    Producer is required and min length is 10
+  </div>
+  <button type="submit">Update Category</button>
+</form>

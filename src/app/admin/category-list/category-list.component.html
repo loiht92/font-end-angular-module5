@@ -1,0 +1,20 @@
+<p>category-list works!</p>
+
+
+<h2>List category</h2>
+<a [routerLink]="['/admin/category-add']">Add Category</a>
+<ul>
+  <li *ngFor="let category of categoryList; index as i">
+    <h3>
+      <a [routerLink]="['/category', category.id]">
+        Category: {{category.id}} - {{category.category_name}} - {{category.producer}}
+      </a>
+    </h3>
+
+    <a [routerLink]="['/admin/category', category.id]">Edit</a>
+
+    <button (click)="deleteCategory(i)">Delete</button>
+  </li>
+</ul>
+
+
